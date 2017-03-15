@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">iSpy</string>
+    <string name="app_name_long">iSpy with Friends</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="settings">Settings</string>
+    <string name="no_internet">No Internet Connectvity</string>
+</resources>

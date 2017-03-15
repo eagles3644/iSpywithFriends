@@ -1,0 +1,172 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <com.squadapps.ispywithfriends.Utils.AutoFitTextureView
+        android:id="@+id/fullscreen_camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"/>
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <RelativeLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:clickable="true"
+            app:rippleColor="@color/colorAccent"
+            app:backgroundTint="@color/white_transparent"
+            app:elevation="6dp"
+            app:pressedTranslationZ="0dp"
+            app:borderWidth="6dp"
+            app:fabSize="normal"/>
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:paddingRight="@dimen/menu_padding_side"
+            android:paddingEnd="@dimen/menu_padding_side"
+            android:src="@drawable/ic_more_vert"
+            android:clickable="true"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/camera_chooser_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingRight="@dimen/menu_padding_side"
+            android:paddingEnd="@dimen/menu_padding_side"
+            android:paddingBottom="@dimen/menu_padding_bottom">
+
+            <ImageView
+                android:id="@+id/camera_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_front"
+                android:clickable="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/camera_rear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_rear"
+                android:clickable="true"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flash_chooser_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="@dimen/menu_padding_side"
+            android:paddingStart="@dimen/menu_padding_side"
+            android:paddingBottom="@dimen/menu_padding_bottom">
+
+            <ImageView
+                android:id="@+id/flash_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_flash_auto"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/flash_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_flash_on"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/flash_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_flash_off"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="@dimen/menu_FAB_padding_side"
+            android:paddingStart="@dimen/menu_FAB_padding_side"
+            android:paddingTop="@dimen/menu_padding_bottom"
+            android:clickable="true"
+            fab:menu_icon="@drawable/ic_menu"
+            fab:menu_openDirection="down"
+            fab:menu_labels_position="right"
+            fab:menu_colorNormal="@color/white_transparent2"
+            fab:menu_colorPressed="@color/white_transparent2"
+            fab:menu_colorRipple="@color/colorAccent">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                fab:fab_size="mini"
+                fab:fab_label="Settings"
+                fab:fab_colorNormal="@color/colorAccent"
+                fab:fab_colorPressed="@color/colorAccent"
+                fab:fab_colorRipple="@android:color/white" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_circle"
+                fab:fab_size="mini"
+                fab:fab_label="Account"
+                fab:fab_colorNormal="@color/colorPrimary"
+                fab:fab_colorPressed="@color/colorPrimary"
+                fab:fab_colorRipple="@android:color/white" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_games"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_videogame"
+                fab:fab_size="mini"
+                fab:fab_label="Existing Games"
+                fab:fab_colorRipple="@android:color/white" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </RelativeLayout>
+
+</FrameLayout>
